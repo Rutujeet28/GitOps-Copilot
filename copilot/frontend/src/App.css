@@ -36,3 +36,334 @@
     transform: rotate(360deg);
   }
 }
+
+.app {
+  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f5f5f5;
+  transition: background-color 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.app.dark {
+  background-color: #121212;
+}
+
+.main-content {
+  padding-top: 80px;
+  height: calc(100vh - 80px);
+  overflow: hidden;
+}
+
+.dashboard {
+  height: 100%;
+  padding: 2rem;
+}
+
+.chat-container {
+  display: flex;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: background-color 0.3s;
+}
+
+.app.dark .chat-container {
+  background-color: #1a1a1a;
+}
+
+.chat-main {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.chat-main h2 {
+  color: #333;
+  margin-bottom: 2rem;
+  transition: color 0.3s;
+}
+
+.app.dark .chat-main h2 {
+  color: #ffffff;
+}
+
+.prompt-section {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.app.dark .prompt-section {
+  background-color: #2d2d2d;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.prompt-input {
+  width: 100%;
+  min-height: 150px;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.app.dark .prompt-input {
+  background-color: #3d3d3d;
+  border-color: #4d4d4d;
+  color: #ffffff;
+}
+
+.prompt-input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.app.dark .prompt-input::placeholder {
+  color: #888888;
+}
+
+.ask-button {
+  padding: 0.75rem 2rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.ask-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.02);
+}
+
+.new-chat-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  margin-bottom: 1rem;
+}
+
+.new-chat-btn:hover {
+  background-color: #218838;
+  transform: scale(1.02);
+}
+
+.ask-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.ask-button:disabled:hover {
+  background-color: #6c757d;
+  transform: none;
+}
+
+.chat-container.guest-view {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.guest-message {
+  text-align: center;
+  margin: 2rem 0;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.guest-message p {
+  margin-bottom: 1.5rem;
+  color: #6c757d;
+  font-size: 1.1rem;
+}
+
+.sign-in-prompt-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sign-in-prompt-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Dark mode styles */
+.dark .guest-message {
+  background-color: #2d2d2d;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dark .guest-message p {
+  color: #adb5bd;
+}
+
+.dark .sign-in-prompt-btn {
+  background-color: #0d6efd;
+}
+
+.dark .sign-in-prompt-btn:hover {
+  background-color: #0b5ed7;
+}
+
+.dashboard.guest-dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  min-height: calc(100vh - 80px);
+  padding: 2rem 0 0 0;
+  background: none;
+}
+
+.guest-prompt-section {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-bottom: 2.5rem;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.guest-prompt-section .prompt-input {
+  min-height: 200px;
+  margin-bottom: 1.5rem;
+}
+
+.guest-prompt-section .ask-button {
+  align-self: flex-end;
+  width: 180px;
+}
+
+.guest-message {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto 0 auto;
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.guest-message p {
+  margin-bottom: 1.5rem;
+  color: #6c757d;
+  font-size: 1.1rem;
+}
+
+.sign-in-prompt-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sign-in-prompt-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Dark mode styles */
+.dark .guest-message {
+  background-color: #2d2d2d;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dark .guest-message p {
+  color: #adb5bd;
+}
+
+.dark .sign-in-prompt-btn {
+  background-color: #0d6efd;
+}
+
+.dark .sign-in-prompt-btn:hover {
+  background-color: #0b5ed7;
+}
+
+.guest-signin-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  margin-top: 0;
+}
+
+.guest-signin-btn {
+  position: relative;
+  margin: 0 auto;
+}
+
+/* Tooltip styles */
+.guest-signin-btn[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  left: 50%;
+  top: 120%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 0.95rem;
+  z-index: 10;
+  opacity: 1;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.guest-signin-btn[title]::after {
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.guest-signin-btn[title]:hover::after {
+  opacity: 1;
+}
+
+/* Remove message text for guest-message in guest-signin-btn-wrapper */
+.guest-signin-btn-wrapper .guest-message p {
+  display: none;
+}
