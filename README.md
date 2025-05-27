@@ -15,6 +15,15 @@
 
 ---
 
+
+## 🧱 Technical Stack
+
+- Front-End : React.js
+- Back-End : Java through SpringBoot
+- Database : MongoDB
+
+---
+
 ## 💡 Key Capabilities
 
 ### 1. ✅ Automated Git Intelligence
